@@ -1,27 +1,18 @@
 from __future__ import print_function, division
 
-import tt
-import tt.utils as utils
-import tt.nn as nn
-import tt.optim as optim
-from tqdm import tqdm
-from PIL import Image
-
-from torchvision.models.resnet import ResNet18_Weights
-from tt.optim import lr_scheduler
-import tt.backends.cudnn as cudnn
-import numpy as np
-import pandas as pd
-import torchvision
-from tqdm import tqdm
-from torchvision import datasets, models, transforms
-import matplotlib.pyplot as plt
-import time
-import os
 import copy
+import time
 
-import urllib.request
-import zipfile
+import torch
+import torch.nn as nn
+import torch.optim as optim
+from torchvision import datasets, models, transforms
+from torchvision.models.resnet import ResNet18_Weights
+from torch.optim import lr_scheduler
+
+# Train 파일 다운받기
+# https://kr.object.ncloudstorage.com/aihub-competition/dataset/K-Fashion_Train.zip
+
 def main():
 
     # 압축 해제할 디렉토리 경로 지정
@@ -147,3 +138,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
